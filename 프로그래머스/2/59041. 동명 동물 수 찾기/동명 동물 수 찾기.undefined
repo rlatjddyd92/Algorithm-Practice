@@ -1,0 +1,14 @@
+-- 코드를 입력하세요
+SELECT
+    NAME,
+    COUNT(*) AS COUNT
+FROM
+    ANIMAL_INS 
+WHERE 
+    IF(NAME IS NULL, 0, 1) = 1
+GROUP BY
+    NAME
+HAVING
+    IF(COUNT(*) > 1, 1, 0) = 1
+ORDER BY
+    NAME ASC
